@@ -14,10 +14,13 @@
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
         <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
+        {{!-- <img src="/images/blog.png" alt="Blog Icon" role="img" aria-label="blog" /> --}}
+
+        <a href="/">Tech Blog</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
+        <a href="/">Homepage</a>
         {{#if logged_in}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
