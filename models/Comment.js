@@ -13,10 +13,11 @@ Comment.init(
     },
     comment: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     date_created: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: DataTypes.NOW,
     },
     user_id: {

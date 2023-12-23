@@ -2,9 +2,8 @@ const newFormHandler = async (event) => {
     event.preventDefault();
   
     const blog_id = document.querySelector('#blog_id').value.trim();
-    // const needed_funding = document.querySelector('#project-funding').value.trim();
     const comment = document.querySelector('#comment-desc').value.trim();
-  
+    console.log(comment);
     if (blog_id && comment) {
       const response = await fetch(`/api/comments`, {
         method: 'POST',
@@ -15,17 +14,15 @@ const newFormHandler = async (event) => {
       });
       console.log(response)
       if (response.ok) {
-        document.location.replace('/profile');
+        // document.location.replace('/profile');
+        document.location.reload();
       } else {
-        alert('Failed to create project');
+        alert('Failed to create comment');
       }
     }
     
   };
   
-  
-  document
-    .querySelector('#comment')
-    .addEventListener('submit', newFormHandler);
+  document.querySelector('#comment').addEventListener('submit', newFormHandler);
 
   
